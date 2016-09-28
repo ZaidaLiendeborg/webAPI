@@ -3,14 +3,19 @@
 #Geocoding
 #Getting URL
 
-get_url <- function(path) {
+getURL2R<- function(path) {
   domain <- "http://maps.google.com/maps/api/geocode/json?"
   url<- paste0(domain,"address=", path)
   url<- URLencode(url)
-  return(url)
+  Robj<- fromJSON(url)
+  
+  if (Robj$status != "OK"){
+    stop("API request failed")
+  }
+  return(Robj)
 }
 
-target<- get_url("Linkoping, Sweden")
+target<- get_url("Linköping, Sweden")
 
 target
 
@@ -44,7 +49,7 @@ latitude=55.75
 longitude=37.62
 zoom=13
 maptype="hybrid"
-suffix ="&size=800x800&sensor=false&format=png"
+suffix ="&size=800x800&format=png"
 
 target <- paste0(base,latitude,",",longitude,
                  "&zoom=",zoom,"&maptype=",maptype,suffix)
