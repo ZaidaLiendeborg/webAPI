@@ -11,6 +11,7 @@ License: Advanced R Programming
 Suggests:
     testthat
 Depends:
+    RJSONIO,
     RgoogleMaps,
     ggplot2,
     ggmap,
