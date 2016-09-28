@@ -11,7 +11,11 @@
 getURL2R<- function(path) {
   if (!(is.character(path))){
     stop("Insert character string")
-  }else{
+  }
+    if(grepl("ö",path) | grepl("å",path) | grepl("ä",path)){
+      stop("Cant handle swedish letter")
+    }else{
+    
   domain <- "http://maps.google.com/maps/api/geocode/json?"
   url<- paste0(domain,"address=", path)
   url<- URLencode(url)
