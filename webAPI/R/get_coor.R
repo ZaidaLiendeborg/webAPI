@@ -7,5 +7,3 @@ get_coor<- function(Robj){
   coor<- list(lat=lat, long=long, place=place)
   return(coor)
 }
-
-

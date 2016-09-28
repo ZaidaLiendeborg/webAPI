@@ -9,8 +9,8 @@ getURL2R<- function(path) {
   
   if (Robj$status != "OK"){
     stop("API request failed")
-  }
+  }else{
   return(Robj)
+
+  }
 }
-
-
