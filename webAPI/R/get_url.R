@@ -5,7 +5,8 @@
 
 get_url <- function(path) {
   domain <- "http://maps.google.com/maps/api/geocode/json?"
-  url<- URLencode(paste0(domain,"address=", path))
+  url<- paste0(domain,"address=", path)
+  url<- URLencode(url)
   return(url)
 }
 
@@ -13,12 +14,10 @@ target<- get_url("Hästskogatan","Linkoping")
 
 target
 
-typeof(dat)
-
 
 #In use
 
-dat <- fromJSON(target)
+
 latitude <- dat$results[[1]]$geometry$location["lat"]
 longitude <- dat$results[[1]]$geometry$location["lng"]
 place <- dat$results[[1]]$formatted_address
@@ -27,7 +26,7 @@ latitude
 longitude
 place
 
-
+dat$status
 
 #Getting a static map
 #Construct that URL in R using paste?
@@ -43,7 +42,7 @@ suffix ="&size=800x800&sensor=false&format=png"
 base="http://maps.googleapis.com/maps/api/staticmap?center="
 latitude=55.75
 longitude=37.62
-zoom=20
+zoom=13
 maptype="hybrid"
 suffix ="&size=800x800&sensor=false&format=png"
 
@@ -54,4 +53,4 @@ target <- paste0(base,latitude,",",longitude,
 #What to do next...?
 download.file(target,"test.png", mode = "wb")
 
-
+class(dat)
