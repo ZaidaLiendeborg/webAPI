@@ -1,17 +1,18 @@
 Package: webAPI
 Type: Package
-Title: Acces Google Geocode API 
+Title: Acces Google Geocode API
 Version: 1.0
 Date: 2016-09-28
 Author: Emma Wallentinsson, Zaida Liendeborg
 Maintainer: Zaida Liendeborg <zaili511@student.liu.se>
-Description: Takes a text argument containing a city, place or street etc and gets the 
-coordinates from Google Geocode API. 
+Description: Takes a text argument containing a city, place or street etc and
+    gets the coordinates from Google Geocode API.
 License: Advanced R Programming
-Suggests: testthat
-Depends: 
-RgoogleMaps,
-ggplot2, 
-ggmap,
-graphics
-
+Suggests:
+    testthat
+Depends:
+    RgoogleMaps,
+    ggplot2,
+    ggmap,
+    graphics
+RoxygenNote: 5.0.1
