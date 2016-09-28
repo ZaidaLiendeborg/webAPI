@@ -1,5 +1,3 @@
-
-
 #Geocoding
 #Getting URL
 getURL2R<- function(path) {
@@ -15,4 +13,4 @@ getURL2R<- function(path) {
   }
 }  
 
-target<-getURL2R("linkoping, sweden")
+
