@@ -7,13 +7,13 @@
 get_coor(Robj)
 }
 \arguments{
-\item{Robj}{An object returned from the \code{\link{get_coor}} function.}
+\item{Robj}{An object returned from the \code{\link{getURL2R}} function.}
 }
 \value{
 A list containing the longitude, latitude and place
 }
 \description{
-Extracting the coordinates from an object returned from the \code{\link{get_coor}} function.
+Extracting the coordinates from an object returned from the \code{\link{getURL2R}} function.
 }
 \examples{
 target<-getURL2R("Linkoping, Sweden")

@@ -1,7 +1,7 @@
 #'Extract the coordinates 
 #'
-#'Extracting the coordinates from an object returned from the \code{\link{get_coor}} function. 
-#'@param Robj An object returned from the \code{\link{get_coor}} function. 
+#'Extracting the coordinates from an object returned from the \code{\link{getURL2R}} function. 
+#'@param Robj An object returned from the \code{\link{getURL2R}} function. 
 #'@return A list containing the longitude, latitude and place 
 #'@examples 
 #'target<-getURL2R("Linkoping, Sweden")
