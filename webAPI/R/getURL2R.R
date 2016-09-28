@@ -11,55 +11,10 @@ getURL2R<- function(path) {
   
   if (Robj$status != "OK"){
     stop("API request failed")
-  }
+  }else{
   return(Robj)
-}
+  }
+}  
+library(RJSONIO)
+target<- getURL2R("Linköping, Sweden")
 
-<<<<<<< HEAD:webAPI/R/get_url.R
-target<- get_url("Hästskogatan","Linkoping")
-=======
-target<- get_url("Linköping, Sweden")
->>>>>>> 85ff3132db1bc8a59f8466a8edf55302703738a2:webAPI/R/getURL2R.R
-
-target
-
-
-#In use
-
-
-latitude <- dat$results[[1]]$geometry$location["lat"]
-longitude <- dat$results[[1]]$geometry$location["lng"]
-place <- dat$results[[1]]$formatted_address
-
-latitude
-longitude
-place
-
-dat$status
-
-#Getting a static map
-#Construct that URL in R using paste?
-base="http://maps.googleapis.com/maps/api/staticmap?center="
-latitude=55.75
-longitude=37.62
-zoom=13
-maptype="hybrid"
-suffix ="&size=800x800&sensor=false&format=png"
-
-
-#Possible solution
-base="http://maps.googleapis.com/maps/api/staticmap?center="
-latitude=55.75
-longitude=37.62
-zoom=13
-maptype="hybrid"
-suffix ="&size=800x800&format=png"
-
-target <- paste0(base,latitude,",",longitude,
-                 "&zoom=",zoom,"&maptype=",maptype,suffix)
-
-
-#What to do next...?
-download.file(target,"test.png", mode = "wb")
-
-class(dat)

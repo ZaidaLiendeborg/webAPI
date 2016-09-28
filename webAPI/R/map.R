@@ -1,3 +1,7 @@
+
+
+dat<-get_coor()
+
 latitude <- dat$results[[1]]$geometry$location["lat"]
 longitude <- dat$results[[1]]$geometry$location["lng"]
 place <- dat$results[[1]]$formatted_address
