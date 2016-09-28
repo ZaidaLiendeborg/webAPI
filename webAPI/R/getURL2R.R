@@ -1,6 +1,9 @@
 #Geocoding
 #Getting URL
 getURL2R<- function(path) {
+  if (!(is.character(path))){
+    stop("Insert character string")
+  }else{
   domain <- "http://maps.google.com/maps/api/geocode/json?"
   url<- paste0(domain,"address=", path)
   url<- URLencode(url)
@@ -13,8 +16,6 @@ getURL2R<- function(path) {
   else{
     return(Robj)
   }
-  
+  }
 }  
-
-
 
