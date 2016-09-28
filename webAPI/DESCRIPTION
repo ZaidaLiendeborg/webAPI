@@ -1,10 +1,17 @@
 Package: webAPI
 Type: Package
-Title: What the package does (short line)
+Title: Acces Google Geocode API 
 Version: 1.0
 Date: 2016-09-28
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Emma Wallentinsson, Zaida Liendeborg
+Maintainer: Zaida Liendeborg <zaili511@student.liu.se>
+Description: Takes a text argument containing a city, place or street etc and gets the 
+coordinates from Google Geocode API. 
+License: Advanced R Programming
 Suggests: testthat
+Depends: 
+RgoogleMaps,
+ggplot2, 
+ggmap,
+graphics
+

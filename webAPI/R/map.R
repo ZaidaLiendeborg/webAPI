@@ -1,7 +1,3 @@
-library(RgoogleMaps)
-library(ggplot2)
-library(ggmap)
-
 
 plot_map<-function(dat, zoom, typemap){
 latitude <- dat$lat
@@ -17,4 +13,4 @@ themap <- get_map(location = c(lon = mean(lon), lat = mean(lat)), zoom = zoom,
 ggmap(themap) +labs(x="Longitude", y="Latitude")
 }
 
-plot_map(hej, zoom=15, typemap="roadmap")
+
