@@ -9,7 +9,9 @@ Description: Takes a text argument containing a city, place or street etc and
     gets the coordinates from Google Geocode API.
 License: Advanced R Programming
 Suggests:
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Depends:
     RJSONIO,
     RgoogleMaps,
