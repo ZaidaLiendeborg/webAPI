@@ -1,5 +1,12 @@
-#JSON to R object
-
+#'Extract the coordinates 
+#'
+#'Extracting the coordinates from an object returned from the \code{\link{get_coor}} function. 
+#'@param Robj An object returned from the \code{\link{get_coor}} function. 
+#'@return A list containing the longitude, latitude and place 
+#'@examples 
+#'target<-getURL2R("Linkoping, Sweden")
+#' CordObj<-get_coor(target)
+#' @export
 get_coor<- function(Robj){
   lat<- Robj$results[[1]]$geometry$location["lat"]
   long<- Robj$results[[1]]$geometry$location["lng"]
