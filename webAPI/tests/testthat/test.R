@@ -28,3 +28,13 @@ test_that("Testing get_coor()",{
                info="Error: get_coor() did not return correct address.")
 }
 )
+
+test_that("Testing plot_map()",{
+ 
+  expect_that(plot_map, is_a("function"),
+              info = "Error: plot_map is not a function.")
+  expect_that(all(names(formals(plot_map)) %in% c("dat", "zoom", "typemap")), 
+              condition=is_true(), info = "Error: API argument name is wrong.")
+}
+)
+  
