@@ -1,5 +1,12 @@
-#Geocoding
-#Getting URL
+#'Harvest coordinates using Google Geocode API
+#'
+#'The function gets the wanted coordinates using Google Geocode API
+#'@param path A character string of a street, city or an adress in the world
+#'@return A list containin the Geocode domain and the url used to get the coordinates. 
+#'@examples
+#'getURL2R("Stockholm, Sweden")
+#'getURL2R("58253, Linkoping")
+#'@export 
 getURL2R<- function(path) {
   if (!(is.character(path))){
     stop("Insert character string")
