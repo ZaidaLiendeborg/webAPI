@@ -3,6 +3,7 @@
 export(getURL2R)
 export(get_coor)
 export(plot_map)
+import(RJSONIO)
 import(RgoogleMaps)
 import(ggmap)
 import(ggplot2)
