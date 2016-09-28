@@ -2,7 +2,6 @@
 
 #Geocoding
 #Getting URL
-
 getURL2R<- function(path) {
   domain <- "http://maps.google.com/maps/api/geocode/json?"
   url<- paste0(domain,"address=", path)
@@ -15,6 +14,5 @@ getURL2R<- function(path) {
   return(Robj)
   }
 }  
-library(RJSONIO)
-target<- getURL2R("Linköping, Sweden")
 
+target<-getURL2R("linkoping, sweden")
