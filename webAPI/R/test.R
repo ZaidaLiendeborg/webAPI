@@ -1,15 +1,57 @@
-install.packages("httr")
-library(httr)
 
-github_api <- function(path) {
-  url <- modify_url("http://www.val.se/val/val2014/statistik", path = path)
-  GET(url)
+
+#Geocoding
+#Getting URL
+
+get_url <- function(path) {
+  domain <- "http://maps.google.com/maps/api/geocode/json?"
+  url<- URLencode(paste0(domain,"address=", path))
+  return(url)
 }
 
-resp <- github_api("/index.html")
-resp
+target<- get_url("Linkoping, Sweden")
 
-GET("http://www.val.se/val/val2014/statistik/index.html")
+target
 
-http_status(resp)
-content(resp, "text", encoding = "ISO-8859-1")
+typeof(dat)
+
+
+#In use
+
+dat <- fromJSON(target)
+latitude <- dat$results[[1]]$geometry$location["lat"]
+longitude <- dat$results[[1]]$geometry$location["lng"]
+place <- dat$results[[1]]$formatted_address
+
+latitude
+longitude
+place
+
+
+
+#Getting a static map
+#Construct that URL in R using paste?
+base="http://maps.googleapis.com/maps/api/staticmap?center="
+latitude=55.75
+longitude=37.62
+zoom=13
+maptype="hybrid"
+suffix ="&size=800x800&sensor=false&format=png"
+
+
+#Possible solution
+base="http://maps.googleapis.com/maps/api/staticmap?center="
+latitude=55.75
+longitude=37.62
+zoom=20
+maptype="hybrid"
+suffix ="&size=800x800&sensor=false&format=png"
+
+target <- paste0(base,latitude,",",longitude,
+                 "&zoom=",zoom,"&maptype=",maptype,suffix)
+
+
+#What to do next...?
+download.file(target,"test.png", mode = "wb")
+
+
