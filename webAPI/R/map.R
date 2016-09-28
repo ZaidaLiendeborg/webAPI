@@ -9,6 +9,10 @@
 #' target<-getURL2R("Linkoping, Sweden")
 #' CordObj<-get_coor(target)
 #' plot_map(CordObj, zoom=10, typemap="roadmap")
+#' @import ggplot2
+#' @import graphics
+#' @import ggmap
+#' @import RgoogleMaps
 #' @export
 plot_map<-function(dat, zoom, typemap){
   latitude <- dat$lat
