@@ -14,9 +14,11 @@
 #' @import ggmap
 #' @import RgoogleMaps
 #' @export
+
+
 plot_map<-function(dat, zoom, typemap){
-  latitude <- dat$lat
-  longitude <- dat$long
+  latitude <- dat$Latitude
+  longitude <- dat$Longitude
   lat <- c(latitude-1, latitude +1) 
   lon <- c(longitude -1, longitude +1) 
 

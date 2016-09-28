@@ -19,7 +19,12 @@ test_that("Testing get_coor()",{
               info = "Error: getURL2R is not a function.")
   expect_that(all(names(formals(get_coor)) %in% c("Robj")), 
               condition=is_true(), info = "Error: API argument name is wrong.")
-  expect_that(test1, is_a("list"), info= "Error: API did not return an R list.")
-  
+  expect_that(coor1, is_a("list"), info= "Error: API did not return an R list.")
+  expect_equal(coor1$Latitude, test1$results[[1]]$geometry$location["lat"],
+               info="Error: get_coor() did not return correct latitude.")
+  expect_equal(coor1$Longitude, test1$results[[1]]$geometry$location["lng"],
+               info="Error: get_coor() did not return correct longitude.")
+  expect_equal(coor1$Place, test1$results[[1]]$formatted_address,
+               info="Error: get_coor() did not return correct address.")
 }
 )
