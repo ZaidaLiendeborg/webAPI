@@ -9,7 +9,7 @@ get_url <- function(path) {
   return(url)
 }
 
-target<- get_url("Linkoping, Sweden")
+target<- get_url("Hästskogatan","Linkoping")
 
 target
 
