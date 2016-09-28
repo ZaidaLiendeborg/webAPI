@@ -6,6 +6,7 @@
 #'@examples
 #'getURL2R("Stockholm, Sweden")
 #'getURL2R("58253, Linkoping")
+#'@import RJSONIO
 #'@export 
 getURL2R<- function(path) {
   if (!(is.character(path))){
