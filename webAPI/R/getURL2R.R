@@ -16,7 +16,7 @@ getURL2R<- function(path) {
     stop("Insert character string")
   }
     if(grepl("ö",path) | grepl("å",path) | grepl("ä",path)){
-      stop("Cant handle swedish letter")
+      stop("Cant handle swedish letters. Replace with 'o' or 'a'")
     }else{
     
   domain <- "http://maps.google.com/maps/api/geocode/json?"
