@@ -1,6 +1,6 @@
-#'Extract the coordinates 
+#'Harvest coordinates using Google Geocode API
 #'
-#'Extracting the coordinates from an object returned from the \code{\link{getURL2R}} function. 
+#'The \code{get_coor} function extracts the coordinates from an object returned from the \code{\link{getURL2R}} function. 
 #'@param Robj An object returned from the \code{\link{getURL2R}} function. 
 #'@return A list containing the longitude, latitude and place 
 #'@examples 

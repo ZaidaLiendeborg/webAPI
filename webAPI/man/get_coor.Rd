@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_coor.R
 \name{get_coor}
 \alias{get_coor}
-\title{Extract the coordinates}
+\title{Harvest coordinates using Google Geocode API}
 \usage{
 get_coor(Robj)
 }
@@ -13,7 +13,7 @@ get_coor(Robj)
 A list containing the longitude, latitude and place
 }
 \description{
-Extracting the coordinates from an object returned from the \code{\link{getURL2R}} function.
+The \code{get_coor} function extracts the coordinates from an object returned from the \code{\link{getURL2R}} function.
 }
 \examples{
 target<-getURL2R("Linkoping, Sweden")

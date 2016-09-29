@@ -17,6 +17,7 @@ Depends:
     RgoogleMaps,
     ggplot2,
     ggmap,
-    graphics
+    graphics,
+    utils
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr

@@ -1,6 +1,6 @@
-#' Plotting a map from coordinates
+#' Plotting the coordinates into a map
 #' 
-#' The function plots a map of selectable types and the wanted zoom of the map. 
+#' The function \code{plot_map} that plots the coordinates returned from the \code{\link{get_coor}} in a map of selectable types. 
 #' @param dat A object returned from the function  \code{\link{get_coor}}.
 #' @param zoom A integer between 3 and 20 depending on how zoomed in you want the map, high values for big zoom.
 #' @param typemap A character string of which kind of map you want. Possible choices are "roadmap","satellite","hybrid" and "terrain". 

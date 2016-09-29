@@ -2,18 +2,18 @@
 % Please edit documentation in R/getURL2R.R
 \name{getURL2R}
 \alias{getURL2R}
-\title{Harvest coordinates using Google Geocode API}
+\title{Get URL and harvest geodata using Google Geocode API}
 \usage{
 getURL2R(path)
 }
 \arguments{
-\item{path}{A character string of a street, city or an adress in the world}
+\item{path}{A character string of postal number, names of the street, city or country in the world}
 }
 \value{
-A list containin the Geocode domain and the url used to get the coordinates.
+A list containing the Geodata about the address typed in the path such as coordinates.
 }
 \description{
-The function gets the wanted coordinates using Google Geocode API
+The \code{getURL2R} takes the postal number, names of the street, city or country in the world encoded into a url. The url then returns a json formatted geodata and then converted to an R object.
 }
 \examples{
 getURL2R("Stockholm, Sweden")

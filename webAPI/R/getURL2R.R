@@ -1,13 +1,16 @@
-#'Harvest coordinates using Google Geocode API
+#'Get URL and harvest geodata using Google Geocode API 
 #'
-#'The function gets the wanted coordinates using Google Geocode API
-#'@param path A character string of a street, city or an adress in the world
-#'@return A list containin the Geocode domain and the url used to get the coordinates. 
+#'The \code{getURL2R} takes the postal number, names of the street, city or country in the world encoded into a url. The url then returns a json formatted geodata and then converted to an R object.  
+#'@param path A character string of postal number, names of the street, city or country in the world
+#'@return A list containing the Geodata about the address typed in the path such as coordinates. 
 #'@examples
 #'getURL2R("Stockholm, Sweden")
 #'getURL2R("58253, Linkoping")
 #'@import RJSONIO
+#'@import utils
 #'@export 
+
+
 getURL2R<- function(path) {
   if (!(is.character(path))){
     stop("Insert character string")

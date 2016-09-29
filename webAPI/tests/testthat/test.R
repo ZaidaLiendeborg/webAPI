@@ -1,5 +1,5 @@
 test_that("Testing getURL2R()",{
-  test1<- getURL2R("Linköping,Sweden")
+  test1<- getURL2R("Linkoping,Sweden")
   
   expect_that(getURL2R, is_a("function"),
               info = "Error: getURL2R is not a function.")

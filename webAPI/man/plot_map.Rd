@@ -2,7 +2,7 @@
 % Please edit documentation in R/map.R
 \name{plot_map}
 \alias{plot_map}
-\title{Plotting a map from coordinates}
+\title{Plotting the coordinates into a map}
 \usage{
 plot_map(dat, zoom, typemap)
 }
@@ -17,7 +17,7 @@ plot_map(dat, zoom, typemap)
 A map over the area from the coordinates in the object from \code{\link{get_coor}}
 }
 \description{
-The function plots a map of selectable types and the wanted zoom of the map.
+The function \code{plot_map} that plots the coordinates returned from the \code{\link{get_coor}} in a map of selectable types.
 }
 \examples{
 target<-getURL2R("Linkoping, Sweden")
