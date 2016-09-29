@@ -16,7 +16,7 @@
 #' @export
 
 
-plot_map<-function(dat, zoom=13, typemap="roadmap"){
+plot_map<-function(dat, zoom=13, typemap="roadmap",...){
   latitude <- dat$Latitude
   longitude <- dat$Longitude
   lat <- c(latitude-1, latitude +1) 
@@ -26,7 +26,8 @@ plot_map<-function(dat, zoom=13, typemap="roadmap"){
                       maptype = typemap, scale = 2 )
 
   ggmap(themap) +labs(x="Longitude", y="Latitude", title=dat$Place) + scale_x_discrete(breaks=NULL) +
-    scale_y_discrete(breaks=NULL)
+    scale_y_discrete(breaks=NULL) + theme(axis.title.x=element_blank(), 
+                                          axis.title.y=element_blank())
 }
 
 
