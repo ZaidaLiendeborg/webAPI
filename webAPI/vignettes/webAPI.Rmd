@@ -1,58 +1,46 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "webAPI"
+author: "Zaida Liendeborg and Emma Wallentinsson"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{webAPI package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+The \code{webAPI} package can be used to access the Google geocode API to download coordinates and plot it on a map. The package consists of three functions that are necessary to plot the coordinates harvested from Google Geocode API into a map of different types.
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+## The getURL2R function
 
-## Vignette Info
+The **getURL2R** takes the postal number, names of the street, city or country in the world encoded into a url. The url then returns a json formatted geodata and then converted to an R object. Example of **getURL2R()** application:
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+```{r}
+library(webAPI)
 
-## Styles
+url1<- getURL2R("Stockholm, Sweden") #encodes the given path into a url and return a list of geodata.
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+attributes(url1)
+```
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
 
-## Figures
+## The get_coor function
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+The **get_coor** function extracts the coordinates from the R list of geodata returned from the **getURL2R** function. Below is an example of how **get_coor()** is used:
+
+```{r}
+#using the url1 object returned from getURL2R, we extract coordinates and name of place.
+
+coor<- get_coor(url1)
+coor
+```
+
+## The plot_map function
+
+The function **plot_map** plots the coordinates returned from the **get_coor**. Users can customize their map into selectable types by specifying it to argument **typemap**. Different map types can be "terrain", "terrain-background", "satellite", "roadmap", and "hybrid". With the argument **zoom**, user can choose how they want to zoom the map.
+ 
 
 ```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+plot_map(coor, zoom=13, typemap="roadmap")
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))

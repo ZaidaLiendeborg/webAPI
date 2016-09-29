@@ -3,7 +3,7 @@
 #' The function \code{plot_map} that plots the coordinates returned from the \code{\link{get_coor}} in a map of selectable types. 
 #' @param dat A object returned from the function  \code{\link{get_coor}}.
 #' @param zoom A integer between 3 and 20 depending on how zoomed in you want the map, high values for big zoom.
-#' @param typemap A character string of which kind of map you want. Possible choices are "roadmap","satellite","hybrid" and "terrain". 
+#' @param typemap A character string of which kind of map you want. Possible choices are "roadmap","satellite","hybrid", "terrain-background" and "terrain". (See \code{\link{get_map}} in \code{ggmap} package)
 #' @return A map over the area from the coordinates in the object from \code{\link{get_coor}}
 #' @examples 
 #' target<-getURL2R("Linkoping, Sweden")

@@ -11,7 +11,7 @@ plot_map(dat, zoom, typemap)
 
 \item{zoom}{A integer between 3 and 20 depending on how zoomed in you want the map, high values for big zoom.}
 
-\item{typemap}{A character string of which kind of map you want. Possible choices are "roadmap","satellite","hybrid" and "terrain".}
+\item{typemap}{A character string of which kind of map you want. Possible choices are "roadmap","satellite","hybrid", "terrain-background" and "terrain". (See \code{\link{get_map}} in \code{ggmap} package)}
 }
 \value{
 A map over the area from the coordinates in the object from \code{\link{get_coor}}
