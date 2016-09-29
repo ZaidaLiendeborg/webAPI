@@ -25,9 +25,7 @@ plot_map<-function(dat, zoom=13, typemap="roadmap",...){
   themap <- get_map(location = c(lon = mean(lon), lat = mean(lat)), zoom = zoom,
                       maptype = typemap, scale = 2 )
 
-  ggmap(themap) +labs(x="Longitude", y="Latitude", title=dat$Place) + scale_x_discrete(breaks=NULL) +
-    scale_y_discrete(breaks=NULL) + theme(axis.title.x=element_blank(), 
-                                          axis.title.y=element_blank())
+  ggmap(themap) +labs(x="Longitude", y="Latitude", title=dat$Place)
 }
 
 
