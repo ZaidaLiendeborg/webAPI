@@ -15,9 +15,12 @@ The \code{webAPI} package can be used to access the Google geocode API to downlo
 
 The **getURL2R** takes the postal number, names of the street, city or country in the world encoded into a url. The url then returns a json formatted geodata and then converted to an R object. Example of **getURL2R()** application:
 
-```{r}
+```{r, echo=FALSE, message=FALSE}
 library(webAPI)
+```
 
+
+```{r}
 url1<- getURL2R("Stockholm, Sweden") #encodes the given path into a url and return a list of geodata.
 
 attributes(url1)
@@ -40,7 +43,7 @@ coor
 The function **plot_map** plots the coordinates returned from the **get_coor**. Users can customize their map into selectable types by specifying it to argument **typemap**. Different map types can be "terrain", "terrain-background", "satellite", "roadmap", and "hybrid". With the argument **zoom**, user can choose how they want to zoom the map.
  
 
-```{r, fig.show='hold'}
+```{r, fig.show='hold', message=FALSE}
 plot_map(coor, zoom=13, typemap="roadmap")
 ```
 

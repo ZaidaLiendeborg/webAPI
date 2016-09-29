@@ -4,7 +4,7 @@
 \alias{plot_map}
 \title{Plotting the coordinates into a map}
 \usage{
-plot_map(dat, zoom, typemap)
+plot_map(dat, zoom = 13, typemap = "roadmap", ...)
 }
 \arguments{
 \item{dat}{A object returned from the function  \code{\link{get_coor}}.}
